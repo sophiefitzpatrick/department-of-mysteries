@@ -54,8 +54,9 @@ CHARACTER_NARRATIVE_1 = '''
 
 		'''
 CHARACTER_NARRATIVE_2 = '''
-		\"Welcome to the Ministry of Magic. Please state your name.\"
+		\"Welcome to the Ministry of Magic\"
 		'''
+CHARACTER_NARRATIVE_NAME = "Please state your name: "
 CHARACTER_NARRATIVE_3 = '''
 		\"Thank you %s, please take the badge and attach it to the front of your robes.\"
 		'''
@@ -102,15 +103,50 @@ LEVEL_8 = '''
 LEVEL_9 = '''
 		\"Courtrooms. The Department of Mysteries is on level 8\"
 		'''
-INPUT_LEVEL = "\"What level would you like to visit?\": "
+INPUT_LEVEL = "What level would you like to visit?: "
 CORRIDOR_NARRATIVE_1 = '''
 		You step out of the lift into the corridor, the grilles close with a bang behind you. If anyone is already here,
 		they will have heard you arrive.
 
 		You walk to the end of the corridor, the black door leading into the Department of Mysteries is ajar.
 
-		You step inside.
+		You pause, something doesn't feel right. Do you flee or continue . . .
+
 		'''
+CORRIDOR_NARRATIVE_2 = "What would you like to do?: "
+QUIT = "Do you want to quit the game?: "
+CORRIDOR_NARRATIVE_3 = '''
+		You step into the Department of Mysteries
+		'''
+CORRIDOR_NARRATIVE_4 = "Enter \"flee\" or \"continue\": "
+ENTRANCE_HALL_1 = '''
+		You are standing in a large, circular room.
+
+		Everything in here is black including the floor and ceiling; 5 identical, unmarked, handleless 
+		black doors are set at intervals all around the black walls, interspersed with branches of candles
+		whose flames burn blue; their cool, shimmering light reflects in the shining marble floor 
+		makes it look as though there is dark water underfoot.
+
+		You shut the door.
+
+		A great rumbling noise begins and the room begins to rotate. You no longer know which 
+		door you entered from.
+
+		The only way is forward.
+
+		The doors are labelled 1 to 5.
+		'''
+ENTRANCE_HALL_2 = "Choose a door to try: "
+#DOOR_1 = 
+
+		
+
+# Brain Chamber
+#b. Death Chamber
+#c. Love Chamber > cannot be opened, explain why
+#d. Space Chamber
+#e. Time Room
+
 
 
 
