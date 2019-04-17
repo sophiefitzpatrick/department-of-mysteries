@@ -16,4 +16,4 @@ It's fun, and a good way of practising control flow.
 
 1. `git clone https://github.com/sophiefitzpatrick/department-of-mysteries.git`
 2. `sudo pip3 install termcolor`
-3. `python3 game.py`
+3. `python3 play.py`
