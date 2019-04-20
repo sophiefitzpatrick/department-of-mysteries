@@ -17,6 +17,8 @@ ENTRANCE_HALL_DESCRIPTION = '''
 		'''
 CHOOSE_DOOR_INPUT = "Choose a door to try: "
 RETURN_MARK_DOOR = '''
+		You're out!
+
 		The door shuts behind you, you feel the cool darkness surround you. Time to collect your thoughts.
 		It might be a good idea to mark the door you just exited before the room begins to rotate.
 		
