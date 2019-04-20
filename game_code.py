@@ -9,15 +9,16 @@ from narratives import (
 	corridor_narrative,
 	entrance_hall_narrative,
 	atrium_narrative,
-	love_narrative
+	love_narrative,
+	space_narrative
 	)
 	
 
 quit = {"quit", "exit", "q", "stop"}
 yes = {"yes","y", "ye", "yep"}
 no = {"no","n", "nope", "nah"}
-back = {"flee", "run", "leave", "stop"}
-forward = {"continue", "forward", "go", "move"}
+back = {"flee", "run", "leave", "stop", "retreat", "back", "backwards", "b", "escape"}
+forward = {"continue", "forward", "go", "move", "explore", "forwards", "c"}
 unlock_incantation = "alohomora"
 
 def welcome():
@@ -44,7 +45,7 @@ def character():
 		sys.exit(colored(welcome_narrative.EXIT_CHOICE, "yellow"))
 	else:
 		dial_code = input(character_narrative.DIAL_CODE_INPUT)
-	character_name = input(character_narrative.CHARACTER_NAME_INPUT)
+	character_name = input(character_narrative.CHARACTER_NAME_INPUT).upper()
 	print(colored(character_narrative.MINISTRY_BADGE % (character_name), "cyan"))
 	return character_name
 
@@ -115,7 +116,7 @@ def entrance_hall():
 		elif "2" in entrance_hall_doors:
 			love_room()
 		elif "3" in entrance_hall_doors:
-			continue
+			space_room()
 		elif "4" in entrance_hall_doors:
 			continue
 		elif "5" in entrance_hall_doors:
@@ -133,24 +134,16 @@ def entrance_hall_return():
 		symbol = input(entrance_hall_narrative.SYMBOL_INPUT)
 	
 def brains_room():
-	print(colored(brain_narrative.ALOHOMORA_CANTATION, "cyan"))
-	alohomora_incantations = input(brain_narrative.SPELL_INPUT).lower()
-	for alohomora_incantation in alohomora_incantations:
-		if alohomora_incantations == unlock_incantation:
-			continue
-		else:
-			alohomora_incantations = input(brain_narrative.ALOHOMORA_WRONG_INPUT).lower()
+	alohomora()
 	print(colored(brain_narrative.DESCRIPTION_BRAIN_ROOM, "cyan"))
 	brain_explore_choices = input(brain_narrative.EXPLORE_CHOICE_INPUT).lower()
-	move_forward = {"tank", "explore", "continue", "forwards"}
-	move_backward = {"leave", "retreat", "run", "escape", "backwards"}
 	for brain_explore_choice in brain_explore_choices:
-		if brain_explore_choices in move_forward:
+		if brain_explore_choices in forward:
 			continue
-		elif brain_explore_choices in move_backward:
+		elif brain_explore_choices in back:
 			entrance_hall_return()
 		else:
-			choices = input(brain_narrative.EXPLORE_CHOICE_WRONG_INPUT).lower()
+			brain_explore_choices = input(brain_narrative.EXPLORE_CHOICE_WRONG_INPUT).lower()
 	print(colored(brain_narrative.BRAINS_WINGARDIUM_LEVIOSA, "cyan"))
 	wingardium_leviosa_incantations = input(brain_narrative.SPELL_INPUT).lower()
 	for wingardium_leviosa_incantation in wingardium_leviosa_incantations:
@@ -189,17 +182,56 @@ def love_room():
 	else:
 		symbol = input(entrance_hall_narrative.SYMBOL_INPUT)
 
+def alohomora():
+	print(colored(brain_narrative.ALOHOMORA_CANTATION, "cyan"))
+	alohomora_incantations = input(brain_narrative.SPELL_INPUT).lower()
+	for alohomora_incantation in alohomora_incantations:
+		if alohomora_incantations == unlock_incantation:
+			continue
+		else:
+			alohomora_incantations = input(brain_narrative.ALOHOMORA_WRONG_INPUT).lower()
+
+def space_room():
+	alohomora()
+	print(colored(space_narrative.DESCRIPTION_SPACE_ROOM, "cyan"))
+	space_room_choices = input(space_narrative.FORWARD_BACK_INPUT).lower()
+	for space_room_choice in space_room_choices:
+		if space_room_choices in forward:
+			continue
+		elif space_room_choices in back:
+			entrance_hall_return()
+		else:
+			choices = input(space_narrative.CHOICE_WRONG_PROMPT).lower()
+	print(colored(space_narrative.PLANETS_DESCRIPTION, "cyan"))
+	jupiter_moon_name = input(space_narrative.JUPITERS_MOONS_INPUT).lower()
+	jupiter_moons = {"ganymede", "io", "europa", "callisto" }
+	if jupiter_moon_name in jupiter_moons:
+		print(colored(space_narrative.MOON_CORRECT, "cyan"))
+	else:
+		print(colored(space_narrative.MOON_INCORRECT, "cyan"))
+	print(colored(space_narrative.PORTKEY_ESCAPE, "cyan"))
+	portkey_choices = input(space_narrative.PORTKEY_CHOICE_INPUT).upper()
+	planets = {"SATURN", "JUPITER", "EARTH", "MERCURY", "MARS", "VENUS", "URANUS", "NEPTUNE"}
+	for portkey_choice in portkey_choices:
+		if portkey_choices in planets:
+			continue
+		else:
+			portkey_choices = input(space_narrative.PORTKEY_CHOICE_INPUT).upper()
+	print(colored(space_narrative.PORTUS_CHARM % (portkey_choices), "cyan"))
+	portus_spells = input(brain_narrative.SPELL_INPUT).lower()
+	for portus_spell in portus_spells:
+		if "portus" in portus_spells:
+			continue
+		else:
+			portus_spells = input(brain_narrative.SPELL_INPUT).lower()
+	print(colored(space_narrative.PORTKEY_TRAVEL % (portkey_choices), "cyan"))
+	entrance_hall_return()
+
+
+
+
 
 
 
 
 		
-
-
-
-
-
-
-
-
-
