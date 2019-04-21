@@ -27,11 +27,11 @@ PLANETS_DESCRIPTION = '''
 		'''
 JUPITERS_MOONS_INPUT = "Can you name one of Jupiter's biggest moons?: "
 MOON_CORRECT = '''
-			Excellent! Well done, this kind of knowledge won't help you here though . . .
-			'''
+		Excellent! Well done, this kind of knowledge won't help you here though . . .
+		'''
 MOON_INCORRECT = '''
-			Well you can't be expected to remember everything Professor Sinistra said . . .
-			'''
+		Well you can't be expected to remember everything Professor Sinistra said . . .
+		'''
 PORTKEY_ESCAPE = '''
 		You must find a way out and back to gravity. You have an idea. 
 

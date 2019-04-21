@@ -10,16 +10,18 @@ from narratives import (
 	entrance_hall_narrative,
 	atrium_narrative,
 	love_narrative,
-	space_narrative
+	space_narrative,
+	death_narrative
 	)
 	
 
 quit = {"quit", "exit", "q", "stop"}
 yes = {"yes","y", "ye", "yep"}
 no = {"no","n", "nope", "nah"}
-back = {"flee", "run", "leave", "stop", "retreat", "back", "backwards", "b", "escape"}
-forward = {"continue", "forward", "go", "move", "explore", "forwards", "c"}
+back = {"flee", "run", "leave", "stop", "retreat", "back", "backwards", "b", "escape", "climb", "climb the stone steps"}
+forward = {"continue", "forward", "go", "move", "explore", "forwards", "c", "walk", "walk through the veil", "walk through"}
 unlock_incantation = "alohomora"
+hello_answer = {"hello", "hi", "who\'s there?", "who\'s there"}
 
 def welcome():
 	print(colored(welcome_narrative.WELCOME_MESSAGE, "cyan"))
@@ -118,7 +120,7 @@ def entrance_hall():
 		elif "3" in entrance_hall_doors:
 			space_room()
 		elif "4" in entrance_hall_doors:
-			continue
+			death_hall()
 		elif "5" in entrance_hall_doors:
 			continue
 		else:
@@ -226,6 +228,33 @@ def space_room():
 			portus_spells = input(brain_narrative.SPELL_INPUT).lower()
 	print(colored(space_narrative.PORTKEY_TRAVEL % (portkey_choices), "cyan"))
 	entrance_hall_return()
+
+def death_hall():
+	alohomora()
+	print(colored(death_narrative.DEATH_HALL_DESCRIPTION, "cyan"))
+	room_choices = input(death_narrative.ROOM_CHOICES).lower()
+	for room_choice in room_choices:
+		if room_choices in hello_answer:
+			continue
+		elif room_choices in back:
+			entrance_hall_return()
+		elif room_choices in quit:
+			sys.exit(colored(welcome_welcome_narrative.EXIT_CHOICE, "yellow"))
+		else:
+			room_choices = input(death_narrative.ROOM_CHOICES).lower()
+	print(colored(death_narrative.DAIS_WHISPERING, "cyan"))
+	archway_choices = input(death_narrative.ARCHWAY_CHOICES).lower()
+	if archway_choices in forward:
+		print(colored(death_narrative.DEATH_DIED, "cyan"))
+		time.sleep(5)
+		sys.exit(colored(welcome_narrative.EXIT_CHOICE, "yellow"))
+	elif archway_choices in back:
+		print(colored(death_narrative.DEATH_SURVIVED, "cyan"))
+		entrance_hall_return()
+	else:
+		archway_choices = input(death_narrative.ARCHWAY_CHOICES).lower()
+
+
 
 
 
