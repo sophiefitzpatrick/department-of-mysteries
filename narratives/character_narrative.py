@@ -19,3 +19,4 @@ PHONEBOX_MOVES = '''
 		The floor of the telephone box shudders and the pavement rises up past it's glass windows. Blackness closes 
 		over your head and with a dull grinding noise you sink down into the depths of the Ministry of Magic.
 		'''
+CHARACTER_AGE_INPUT = "Please state your age: "

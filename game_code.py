@@ -11,7 +11,9 @@ from narratives import (
 	atrium_narrative,
 	love_narrative,
 	space_narrative,
-	death_narrative
+	death_narrative,
+	time_narrative,
+	prophecy_narrative
 	)
 	
 
@@ -48,8 +50,10 @@ def character():
 	else:
 		dial_code = input(character_narrative.DIAL_CODE_INPUT)
 	character_name = input(character_narrative.CHARACTER_NAME_INPUT).upper()
+	global character_age
+	character_age = int(input(character_narrative.CHARACTER_AGE_INPUT))
 	print(colored(character_narrative.MINISTRY_BADGE % (character_name), "cyan"))
-	return character_name
+	return character_age
 
 def atrium():
 	print(colored(atrium_narrative.ATRIUM_DESCRIPTION, "cyan"))
@@ -122,7 +126,7 @@ def entrance_hall():
 		elif "4" in entrance_hall_doors:
 			death_hall()
 		elif "5" in entrance_hall_doors:
-			continue
+			time_room()
 		else:
 			entrance_hall_doors = input(entrance_hall_narrative.CHOOSE_DOOR_INPUT)
 
@@ -239,7 +243,7 @@ def death_hall():
 		elif room_choices in back:
 			entrance_hall_return()
 		elif room_choices in quit:
-			sys.exit(colored(welcome_welcome_narrative.EXIT_CHOICE, "yellow"))
+			sys.exit(colored(welcome_narrative.EXIT_CHOICE, "yellow"))
 		else:
 			room_choices = input(death_narrative.ROOM_CHOICES).lower()
 	print(colored(death_narrative.DAIS_WHISPERING, "cyan"))
@@ -254,6 +258,55 @@ def death_hall():
 	else:
 		archway_choices = input(death_narrative.ARCHWAY_CHOICES).lower()
 
+def time_room():
+	alohomora()
+	print(colored(time_narrative.DESCRIPTION_TIME_ROOM, "cyan"))
+	room_choices = input(time_narrative.FORWARD_BACK_INPUT).lower()
+	for room_choice in room_choices:
+		if room_choices in forward:
+			continue
+		elif room_choices in back:
+			entrance_hall_return()
+		elif room_choices in quit:
+			sys.exit(colored(welcome_narrative.EXIT_CHOICE, "yellow"))
+		else:
+			room_choices = input(time_narrative.FORWARD_BACK_INPUT).lower()
+	print(colored(time_narrative.BELLJAR_DESCRIPTION, "cyan"))
+	belljar_choices = input(time_narrative.BELLJAR_CHOICE_INPUT).lower()
+	belljar = {"belljar", "look", "explore", "edge closer to the belljar", "closer"}
+	for belljar_choice in belljar_choices:
+		if belljar_choices in forward:
+			hall_of_prophecy_door()
+			hall_of_prophecy()
+			return
+		elif belljar_choices in belljar:
+			print(colored(time_narrative.BELLJAR_CHOSEN_DESCRIPTION,  "cyan"))
+			mind_ages = int(input(time_narrative.WHAT_AGE_INPUT))
+			if mind_ages == character_age:
+				hall_of_prophecy_door()
+				hall_of_prophecy()
+				return
+			elif mind_ages > character_age:
+				print(colored(time_narrative.OLDER_AGE, "cyan"))
+				hall_of_prophecy_door()
+				hall_of_prophecy()
+				return
+			elif mind_ages < character_age:
+				print(colored(time_narrative.YOUNGER_AGE, "cyan"))
+				time.sleep(5)
+				sys.exit(colored(welcome_narrative.EXIT_CHOICE, "yellow"))
+			elif mind_ages in quit:
+				sys.exit(colored(welcome_narrative.EXIT_CHOICE, "yellow"))
+			else:
+				mind_age = int(input(time_narrative.WHAT_AGE_INPUT))
+		else:
+			belljar_choices = input(time_narrative.BELLJAR_CHOICE_INPUT).lower()
+	
+def hall_of_prophecy_door():
+	print(colored(prophecy_narrative.PROPHECY_DOOR, "cyan"))
+	alohomora()
+
+def hall_of_prophecy():
 
 
 
@@ -261,6 +314,4 @@ def death_hall():
 
 
 
-
-
-		
+			
