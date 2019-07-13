@@ -1,16 +1,33 @@
 # Department of Mysteries
 
-A text adventure game, based on events which occur during the Second Wizarding War circa 1995.
+April 2019
 
-(based on J.K Rowling's "Harry Potter and the Order of the Phoenix")
+A text adventure game played on the command line, based on events which occur during the Second Wizarding War circa 1995.
+
+The game is based on J.K Rowling's "Harry Potter and the Order of the Phoenix".
+
+
+## The Story
+
+The story begins when you touch down in London atop a Thestral, to steal a prophecy from the Ministry of Magic.
+
+But who are you? Your decisions and actions determine your purpose for obtaining the prophecy. Who do you report to?
+
+![Screenshot](introduction.png)
+
+![Screenshot](love_room.png)
+
+![Screenshot](dead.png)
+
 
 ## Progress?
 
-It's a work in progress, check back for updates.
+I've left the game incomplete but at a pretty straight edge so it is still playable. I'd have liked to have taken the story forward but it's served it's purpose, to practise python but more specifically `control flow` -  a concept I was initially struggling to grok.
 
-## Why am I building a text based adventure game?
+I'm still on a steep learning curve with python, and it seems a good time to move to a new project that continues to push my skills further.
 
-It's fun, and a good way of practising control flow.
+Maybe one day I will come back to this.
+
 
 ## Getting Started
 

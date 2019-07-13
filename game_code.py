@@ -15,7 +15,7 @@ from narratives import (
 	time_narrative,
 	prophecy_narrative
 	)
-	
+
 
 quit = {"quit", "exit", "q", "stop"}
 yes = {"yes","y", "ye", "yep"}
@@ -84,7 +84,7 @@ def atrium():
 		elif "9" in level_choices:
 			print(colored(atrium_narrative.LEVEL_9, "cyan"))
 			level_choices = input(atrium_narrative.MOM_LEVEL_INPUT)
-		elif "8" in level_choices: 
+		elif "8" in level_choices:
 			continue
 		elif level_choices in quit:
 			sys.exit(colored(welcome_narrative.EXIT_CHOICE, "yellow"))
@@ -113,7 +113,7 @@ def corridor():
 
 def entrance_hall_desc():
 	print(colored(entrance_hall_narrative.ENTRANCE_HALL_DESCRIPTION, "cyan"))
-	
+
 def entrance_hall():
 	entrance_hall_doors = input(entrance_hall_narrative.CHOOSE_DOOR_INPUT)
 	for entrance_hall_door in entrance_hall_doors:
@@ -138,7 +138,7 @@ def entrance_hall_return():
 		entrance_hall()
 	else:
 		symbol = input(entrance_hall_narrative.SYMBOL_INPUT)
-	
+
 def brains_room():
 	alohomora()
 	print(colored(brain_narrative.DESCRIPTION_BRAIN_ROOM, "cyan"))
@@ -301,17 +301,7 @@ def time_room():
 				mind_age = int(input(time_narrative.WHAT_AGE_INPUT))
 		else:
 			belljar_choices = input(time_narrative.BELLJAR_CHOICE_INPUT).lower()
-	
+
 def hall_of_prophecy_door():
 	print(colored(prophecy_narrative.PROPHECY_DOOR, "cyan"))
 	alohomora()
-
-def hall_of_prophecy():
-
-
-
-
-
-
-
-			
