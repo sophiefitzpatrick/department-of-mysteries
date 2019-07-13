@@ -20,7 +20,7 @@ But who are you? Your decisions and actions determine your purpose for obtaining
 ![Screenshot](Screenshots/dead.png)
 
 
-## Progress?
+## Progress
 
 I've left the game incomplete but at a pretty straight edge so it is still playable. I'd have liked to have taken the story forward but it's served it's purpose, to practise python but more specifically `control flow` -  a concept I was initially struggling to grok.
 
