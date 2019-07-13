@@ -13,11 +13,11 @@ The story begins when you touch down in London atop a Thestral, to steal a proph
 
 But who are you? Your decisions and actions determine your purpose for obtaining the prophecy. Who do you report to?
 
-![Screenshot](screenshots/introduction.png)
+![Screenshot](Screenshots/introduction.png)
 
-![Screenshot](screenshots/love_room.png)
+![Screenshot](Screenshots/love_room.png)
 
-![Screenshot](screenshots/dead.png)
+![Screenshot](Screenshots/dead.png)
 
 
 ## Progress?
