@@ -15,10 +15,6 @@ But who are you? Your decisions and actions determine your purpose for obtaining
 
 ![Screenshot](Screenshots/introduction.png)
 
-![Screenshot](Screenshots/love_room.png)
-
-![Screenshot](Screenshots/dead.png)
-
 
 ## Progress
 
